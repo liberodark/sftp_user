@@ -14,10 +14,10 @@ usage ()
      echo "-h: Show help"
 }
 
-echo "What is a user ?"
+add_user(){
+echo "Who is the user to create ?"
 read -r username
 
-add_user(){
 useradd -g sftpusers -d /"${username}" -s /sbin/nologin "${username}"
 passwd "${username}"
 mkdir -p /sftp/"${username}"
@@ -27,6 +27,9 @@ systemctl restart sshd
 }
 
 del_user(){
+echo "Who is the user to remove ?"
+read -r username
+
 userdel -r -f "${username}"
 rm -rf /sftp/"${username}"
 systemctl restart sshd
