@@ -1,21 +1,21 @@
 # sftp_user
 
 
-### Download sftp_user :
+##### Download sftp_user :
 
 ```
 wget https://raw.githubusercontent.com/liberodark/sftp_user/main/sftp_users.sh -O /usr/bin/sftp_user
 chmod +x /usr/bin/sftp_user
 ```
 
-### Create sftp group & folder :
+##### Create sftp group & folder :
 
 ```
 groupadd sftpusers
 mkdir /sftp
 ```
 
-### Edit sshd_config :
+##### Edit sshd_config :
 
 `nano /etc/ssh/sshd_config`
 
@@ -32,6 +32,6 @@ Match Group sftpusers
         ForceCommand internal-sftp
 ```
 
-### Restart server ssh :
+##### Restart server ssh :
 
 `systemctl restart sshd`
