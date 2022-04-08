@@ -1,9 +1,11 @@
 # sftp_user
 
+```
 wget https://raw.githubusercontent.com/liberodark/sftp_user/main/sftp_users.sh -O /usr/bin/sftp_user
 chmod +x /usr/bin/sftp_user
 groupadd sftpusers
 mkdir /sftp
+```
 
 `nano /etc/ssh/sshd_config`
 
